@@ -1,6 +1,6 @@
 ## 알고리즘 문제 올리기
 
-### 출처
+### 문제출처
 - Baekjoon
 - Jungol
 - SW Expert
@@ -130,7 +130,7 @@ public static void bfs(int sr, int sc, int er, int ec) {
 ```
 <hr>
 
-### DP & DFS 예시코드
+### DP & DFS 예시코드1
 ```java
 public static int dfs_dp(int r, int c) {
 	if(dp[r][c] > 0) return dp[r][c];	// 이미 지나온 길은 리턴
@@ -149,5 +149,28 @@ public static int dfs_dp(int r, int c) {
 	return dp[r][c];
 }
 	// 예시문제) 욕심쟁이판다
+```
+<hr>
+
+### DP & DFS 예시코드2
+```java
+public static int dfs_dp(int r, int c) {
+	if(r == N-1 && c == M-1) return 1;
+	if(dp[r][c] > -1) return dp[r][c];
+	
+	dp[r][c] = 0;
+	int nr, nc;
+	for(int k=0; k<4; k++) {
+		nr = r + dr[k];
+		nc = c + dc[k];
+		if(nr > -1 && nr < N && nc > -1 && nc < M
+			&& map[nr][nc] < map[r][c]) {
+			dp[r][c] += dfs(nr, nc);
+		}
+	}
+	
+	return dp[r][c];
+}
+	// 예시문제) 내리막 길
 ```
 <hr>
