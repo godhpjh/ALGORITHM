@@ -174,3 +174,23 @@ public static int dfs_dp(int r, int c) {
 	// 예시문제) 내리막 길
 ```
 <hr>
+
+### DP 예시코드
+```java
+DP = new long[N+1][N+1][3];
+DP[1][2][W] = 1; // 가로
+DP[1][2][H] = 0; // 세로
+DP[1][2][D] = 0; // 대각선
+for(int i=1; i<=N; i++) {
+	for(int j=3; j<=N; j++) { // 1열과 2열은 파이프를 놓을 수 없으므로
+		if(map[i][j] == '1') continue;
+		DP[i][j][W] = DP[i][j-1][W] + DP[i][j-1][D]; // 가로로 놓을 경우
+		DP[i][j][H] = DP[i-1][j][H] + DP[i-1][j][D]; // 세로로 놓을 경우
+		if(map[i][j-1] == '0' && map[i-1][j] == '0') { // 대각선으로 놓을 경우
+			DP[i][j][D] = DP[i-1][j-1][W] + DP[i-1][j-1][H] + DP[i-1][j-1][D]; 
+		}
+	}
+}
+
+	// 예시문제) 파이프옮기기2
+```
