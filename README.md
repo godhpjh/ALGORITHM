@@ -5,8 +5,9 @@
 - Jungol
 - SW Expert
 
+<hr>
 
-### 크루스칼(Kruskal) 예시코드(Union-Find) (O(ElogV)) & 
+### 크루스칼(Kruskal) 예시코드(Union-Find) (O(ElogV))
 ```java
 // ---------------------------- Main작성용 -----------------------------
 int cnt = 0; // 간선 수 비교용
@@ -35,6 +36,7 @@ public static boolean union(int a, int b) {
 	return true;
 }
 ```
+<hr>
 
 ### 다익스트라(Dijkstra) 예시코드 (O(ElogV))
 ```java
@@ -61,6 +63,7 @@ public static void dijkstra() {
 }
     // 예시문제) 녹색옷 입은애가 젤다지
 ```
+<hr>
 
 ### 플로이드워셜(Floyd-Warshall) 예시코드 (O(n^3))
 ```java
@@ -77,6 +80,7 @@ for(int k=0; k<N; k++) {			// 경 유지
 
 	// 잊지말자 플로이드 경출도!
 ```
+<hr>
 
 ### 비트마스킹+BFS(열쇠 문열기) 예시코드
 ```java
@@ -124,6 +128,7 @@ public static void bfs(int sr, int sc, int er, int ec) {
 }
 	// 예시문제) 아맞다우산
 ```
+<hr>
 
 ### DP & DFS 예시코드
 ```java
@@ -145,3 +150,4 @@ public static int dfs_dp(int r, int c) {
 }
 	// 예시문제) 욕심쟁이판다
 ```
+<hr>
