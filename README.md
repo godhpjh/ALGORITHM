@@ -35,6 +35,7 @@ public static boolean union(int a, int b) {
 	parents[bRoot] = aRoot; //bRoot를 a밑에 붙이자!
 	return true;
 }
+	// 예시문제) 도시분할계획
 ```
 <hr>
 
@@ -194,3 +195,5 @@ for(int i=1; i<=N; i++) {
 
 	// 예시문제) 파이프옮기기2
 ```
+
+<hr>
