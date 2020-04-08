@@ -176,6 +176,26 @@ public static int dfs_dp(int r, int c) {
 ```
 <hr>
 
+### DP & DFS 예시코드3
+```java
+public static int dfs_dp(int day, int coupon) {
+	if(day > N) return 0;
+	
+	if(dp[day][coupon] != INF) return dp[day][coupon];
+	if(checked[day]) return dp[day][coupon] = dfs_dp(day+1, coupon); // 갈수 없는날은 패스
+	
+	dp[day][coupon] = Math.min(dp[day][coupon], dfs_dp(day+5, coupon+2) + 37000);
+	dp[day][coupon] = Math.min(dp[day][coupon], dfs_dp(day+3, coupon+1) + 25000);
+	dp[day][coupon] = Math.min(dp[day][coupon], dfs_dp(day+1, coupon)   + 10000);
+	
+	// 쿠폰 사용
+	if(coupon >= 3) dp[day][coupon] = Math.min(dp[day][coupon], dfs_dp(day+1, coupon-3));
+	
+	return dp[day][coupon];
+}
+	// 예시문제) 리조트
+```
+
 ### DP 예시코드
 ```java
 DP = new long[N+1][N+1][3];
