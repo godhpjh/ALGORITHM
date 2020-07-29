@@ -7,6 +7,35 @@
 
 <hr>
 
+### Next Permutation !!
+```java
+private static boolean np(int size) {
+	// 1)앞자리가 뒷자리보다 작은 숫자 일때까지 이동 
+	//-> i>=0 이고 arr[i-1]<arr[i]일때 멈춤	
+	int i = size-1;
+	while(i > 0 && arr[i-1] >= arr[i]) {
+		i--;
+	}
+	// 모든 수가 내림차순 정렬이면 더이상 정렬할게 없음
+	if(i == 0) return false;
+	// 2)arr[i-1]<arr[j]인 j찾고 swap
+	int j = size-1;
+	while(arr[i-1] >= arr[j]) {
+		j--;
+	}		
+	swap(i-1 , j);
+	// 3)arr[i]와 맨 끝자리 수부터 대칭으로 swap 
+	j = size-1;
+	while(i < j) {
+		swap(i++ , j--);
+	}
+	return true;
+}
+```
+
+<hr>
+
+
 ### 크루스칼(Kruskal) 예시코드(Union-Find) (O(ElogV))
 ```java
 // ---------------------------- Main작성용 -----------------------------
